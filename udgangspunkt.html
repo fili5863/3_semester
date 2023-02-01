@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Actors</h1>
+    <main></main>
+    <template>
+      <article>
+        <h2 class="fullname"></h2>
+        <h3 class="movie"></h3>
+      </article>
+    </template>
+    <section id="popUp">
+      <article>
+        <h2 class="fullname"></h2>
+        <h3 class="movie"></h3>
+      </article>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", start);
+      let actors;
+      const fil = "actors.json";
+      let filter = "Fight Club";
+      // første function der kaldes efter DOM er loaded
+      function start() {
+        hentData();
+      }
+
+      async function hentData(fil) {
+        const resultat = await fetch(fil);
+        const actors = await resultat.json();
+        console.log("actors", actors);
+        vis(actors);
+      }
+
+      function vis(json) {
+        const container = document.querySelector("main");
+        const skabelon = document.querySelector("template");
+        json.forEach(actor => {
+          if (filter == actor.movie) {
+            const clone = skabelon.cloneNode(true).content;
+            clone.querySelector("article").addEventListener("click", () => visActor(actor));
+            clone.querySelector(".fullname").textContent = actor.fullname;
+            // clone.querySelector(".movie").textContent = actor.movie;
+            container.appendChild(clone);
+          }
+        });
+      }
+
+      function visActor(actor) {
+        console.log(actor);
+        const popUp = document.querySelector("#popUp");
+        popUp.style.display = "flex";
+        popUp.querySelector(".fullname").textContent = actor.fullname;
+        popUp.querySelector(".movie").textContent = actor.movie;
+        popUp.addEventListener("click", () => (popUp.style.display = "none"));
+      }
+
+      hentData(fil);
+    </script>
+  </body>
+</html>
