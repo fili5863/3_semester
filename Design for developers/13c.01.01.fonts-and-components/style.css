@@ -1,0 +1,274 @@
+/* Resetter */
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+/* Color Properties */
+:root {
+  --color-darker: #082a1d;
+  --color-dark: #0f3e34;
+  --color-light: #d2ffdb;
+  --color-lighter: #ffffff;
+  --color-accent: #d47100;
+  --font-paragraph: "Jost", sans-serif;
+  --font-display: "Roboto", sans-serif;
+  /* you could add an accent color for CTAs and anchor tags ;-) */
+}
+
+/* Fonts */
+html {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-darker);
+  font-family: var(--font-display);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-style: italic;
+  font-size: 2.5rem;
+  max-width: 30ch;
+}
+
+h3 {
+}
+
+p {
+  color: var(--color-dark);
+  font-family: var(--font-paragraph);
+  letter-spacing: -0.011rem;
+}
+
+.intro_text h2 {
+  margin-block-end: 0.4rem;
+}
+
+.info_text p {
+  color: var(--color-darker);
+}
+
+#cards h2 {
+  color: var(--color-accent);
+}
+
+/* UI Elements */
+button {
+  display: inline-block;
+  height: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-accent);
+  color: var(--color-lighter);
+}
+
+button:hover {
+  background-color: var(--color-darker);
+}
+
+.card_button_negative,
+.card_button_positive {
+  background-color: var(--color-accent);
+  color: var(--color-lighter);
+  border: solid 2px var(--color-lighter);
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: 100ms;
+}
+
+.card_button_negative:hover,
+.card_button_positive:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: solid 2px var(--color-accent);
+}
+
+.light_button {
+  background-color: var(--color-lighter);
+  color: var(--color-darker);
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  width: 250px;
+  height: 2rem;
+  padding: 0.5rem;
+  text-align: left;
+  background-color: var(--color-lighter);
+  border-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+/* Menu */
+nav {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-darker);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Header */
+header {
+  display: flex;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--color-dark);
+}
+
+.header_text {
+  width: 40vw;
+  min-width: 300px;
+}
+
+.header_text h1 {
+  color: var(--color-lighter);
+}
+
+.header_text p {
+  color: var(--color-light);
+}
+
+.header_graphics {
+  width: 35vw;
+  height: 35vw;
+  min-width: 300px;
+  min-height: 300px;
+  background-color: var(--color-darker);
+}
+
+/* Sections */
+#intro {
+  display: flex;
+  min-height: 80vh;
+  padding: 0px 15rem;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--color-light);
+}
+
+.intro_text {
+  width: 40vw;
+  min-width: 450px;
+}
+
+.intro_graphics {
+  width: 15vw;
+  height: 15vw;
+  min-width: 150px;
+  min-height: 150px;
+  background-color: var(--color-dark);
+}
+
+.card {
+  display: grid;
+  grid-auto-rows: 1fr;
+  width: 250px;
+  height: 425px;
+  border: 10px solid var(--color-lighter);
+  box-shadow: 1px 5px 10px rgba(19, 19, 19, 0.096);
+}
+
+.card h3 {
+  grid-column: span 2;
+}
+
+.card p {
+  grid-column: span 2;
+}
+.card input {
+  grid-row: 8;
+  height: 45px;
+}
+
+#cards {
+  min-height: 80vh;
+  padding: 5rem 2rem;
+}
+
+#card_container {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 2.5rem;
+  justify-items: center;
+}
+
+.card_image {
+  grid-column: span 2;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+#info {
+  display: flex;
+  min-height: 80vh;
+  padding-left: 2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-light);
+}
+
+.info_text {
+  width: 60vw;
+  min-width: 300px;
+}
+
+#contact {
+  display: flex;
+  min-height: 80vh;
+  padding-left: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  padding: 5vh 2rem;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--color-darker);
+}
+
+footer h2,
+footer h3 {
+  color: var(--color-lighter);
+}
+
+footer a {
+  color: var(--color-light);
+}
+
+footer section {
+  display: flex;
+  max-width: 50vw;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer section div {
+  margin: 0px 1rem 1rem 1rem;
+}

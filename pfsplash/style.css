@@ -1,0 +1,49 @@
+body {
+  margin: 0 auto;
+  background-color: #1c1c1c;
+  height: 3436px;
+  max-width: 1500px;
+}
+
+.top {
+  position: fixed;
+  height: 104px;
+  width: 1500px;
+}
+
+.text {
+  position: relative;
+  top: -100px;
+  left: 300px;
+  width: 864px;
+  height: auto;
+
+  animation: moveText 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -6s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.shape {
+  position: relative;
+  width: 743px;
+  height: auto;
+  top: 200px;
+  left: 25%;
+  animation: moveShape 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -6s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes moveShape {
+  to {
+    transform: translate(-670px, -400px) scale(0.2);
+  }
+}
+@keyframes moveText {
+  to {
+    transform: translate(-445px, -404px) scale(0.5);
+  }
+}

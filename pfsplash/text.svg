@@ -1,0 +1,18 @@
+<svg id="Component_8_1" data-name="Component 8 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="864" height="102" viewBox="0 0 864 102">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_20" data-name="Rectangle 20" width="864" height="102" transform="translate(0 0.316)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Group_11" data-name="Group 11" transform="translate(0 -0.316)" clip-path="url(#clip-path)">
+    <path id="Path_74" data-name="Path 74" d="M0,0V102.316H45.474V68.211H56.842s34.105,0,34.105-34.105S56.842,0,56.842,0Z" fill="#fff"/>
+    <path id="Path_75" data-name="Path 75" d="M230.211,68.211l22.737,34.105H162V0h56.842s34.105,0,34.105,34.105c0,20.905-12.821,29-22.737,32.135-.291.088-.581.177-.859.253Z" transform="translate(42.632)" fill="#fff"/>
+    <path id="Path_76" data-name="Path 76" d="M333.947,0V34.105H311.211v68.211H265.737V34.105H243V0Z" transform="translate(63.947)" fill="#fff"/>
+    <path id="Path_77" data-name="Path 77" d="M369.474,35.368v3.789h45.474v6.316H369.474v56.842H324V0h90.947V35.368Z" transform="translate(85.263)" fill="#fff"/>
+    <path id="Path_78" data-name="Path 78" d="M576.947,68.211v34.105H486V0h45.474V68.211Z" transform="translate(127.895)" fill="#fff"/>
+    <rect id="Rectangle_19" data-name="Rectangle 19" width="46" height="102" transform="translate(716 0.316)" fill="#fff"/>
+    <path id="Path_79" data-name="Path 79" d="M657.474,102.316h0A45.474,45.474,0,0,1,612,56.842V45.474a45.474,45.474,0,1,1,90.947,0V56.842a45.474,45.474,0,0,1-45.474,45.474" transform="translate(161.053)" fill="#fff"/>
+    <path id="Path_80" data-name="Path 80" d="M126.474,102.316h0A45.474,45.474,0,0,1,81,56.842V45.474a45.474,45.474,0,1,1,90.947,0V56.842a45.474,45.474,0,0,1-45.474,45.474" transform="translate(21.316)" fill="#fff"/>
+    <path id="Path_81" data-name="Path 81" d="M450.474,102.316h0A45.474,45.474,0,0,1,405,56.842V45.474a45.474,45.474,0,0,1,90.947,0V56.842a45.474,45.474,0,0,1-45.474,45.474" transform="translate(106.579)" fill="#fff"/>
+  </g>
+</svg>
