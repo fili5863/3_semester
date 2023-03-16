@@ -9,6 +9,13 @@
   </head>
   <body>
     <h1>Actors</h1>
+    <nav>
+      <button data-movie="all" class="valgt">all</button>
+      <button data-movie="Fight Club">Fight Club</button>
+      <button data-movie="Inception">Inception</button>
+      <button data-movie="Goodfellas">Goodfellas</button>
+      <button data-movie="Pulp Fiction">Pulp Fiction</button>
+    </nav>
     <main></main>
     <template>
       <article>
@@ -23,31 +30,47 @@
       </article>
     </section>
     <script>
+      // runs the "start" function when the DOM is loaded
       document.addEventListener("DOMContentLoaded", start);
       let actors;
       const fil = "actors.json";
-      let filter = "Fight Club";
-      // første function der kaldes efter DOM er loaded
+      let filter = "all";
+      const header = document.querySelector("h1");
+
+      // adds the function to filter the actorlist on click
       function start() {
+        const filterKnapper = document.querySelectorAll("nav button");
+
+        filterKnapper.forEach(knap => knap.addEventListener("click", filtrerActors));
         hentData();
       }
-
+      // the function that filters the actors
+      function filtrerActors() {
+        filter = this.dataset.movie;
+        document.querySelector(".valgt").classList.remove("valgt");
+        this.classList.add("valgt");
+        vis(actors);
+        header.textContent = this.textContent;
+      }
+      // this fetches the data from the JSON file
       async function hentData(fil) {
         const resultat = await fetch(fil);
-        const actors = await resultat.json();
+        actors = await resultat.json();
         console.log("actors", actors);
         vis(actors);
       }
-
-      function vis(json) {
+      //
+      function vis(actors) {
         const container = document.querySelector("main");
         const skabelon = document.querySelector("template");
-        json.forEach(actor => {
-          if (filter == actor.movie) {
+        container.textContent = "";
+        actors.forEach(actor => {
+          console.log("movie", actor.movie);
+          if (filter == actor.movie || filter == "all") {
             const clone = skabelon.cloneNode(true).content;
-            clone.querySelector("article").addEventListener("click", () => visActor(actor));
             clone.querySelector(".fullname").textContent = actor.fullname;
             // clone.querySelector(".movie").textContent = actor.movie;
+            clone.querySelector("article").addEventListener("click", () => visActor(actor));
             container.appendChild(clone);
           }
         });
