@@ -9,7 +9,7 @@
 :root {
   --color-darker: #082a1d;
   --color-dark: #0f3e34;
-  --color-light: #d2ffdb;
+  --color-light: #e1ffe7;
   --color-lighter: #ffffff;
   --color-accent: #d47100;
   --font-paragraph: "Jost", sans-serif;
@@ -97,6 +97,7 @@ button:hover {
 .light_button {
   background-color: var(--color-lighter);
   color: var(--color-darker);
+  transition: 100ms;
 }
 
 input[type="text"] {
@@ -108,6 +109,14 @@ input[type="text"] {
   background-color: var(--color-lighter);
   border-color: var(--color-light);
   color: var(--color-dark);
+}
+
+.info_text > button {
+  margin-top: 10px;
+}
+
+nav > button:hover {
+  background-color: var(--color-accent);
 }
 
 /* Menu */
@@ -254,7 +263,7 @@ footer {
 
 footer h2,
 footer h3 {
-  color: var(--color-lighter);
+  color: var(--color-accent);
 }
 
 footer a {

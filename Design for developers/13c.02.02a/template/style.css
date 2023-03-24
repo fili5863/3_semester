@@ -1,0 +1,18 @@
+.over {
+  animation-duration: 1s;
+  stroke-width: 20px;
+  stroke-dasharray: 10 10;
+  stroke: red;
+  animation-iteration-count: infinite;
+  animation-name: stroke-animation;
+  animation-timing-function: linear;
+}
+
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 20;
+  }
+}
