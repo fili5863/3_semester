@@ -386,3 +386,26 @@ h3 {
     var(--color-accent3)
   );
 }
+
+footer {
+  margin-top: 100px;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-header);
+  font-weight: 900;
+  font-size: 2rem;
+  color: transparent;
+  background-color: var(--color-darker);
+}
+
+footer p {
+  background: linear-gradient(
+    230deg,
+    var(--color-accent1),
+    var(--color-accent2),
+    var(--color-accent3)
+  );
+  background-clip: text;
+}
