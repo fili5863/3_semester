@@ -312,6 +312,10 @@ h3 {
   #pageInner2 {
     flex-direction: column;
   }
+  #pageInner3 {
+    display: flex;
+    flex-direction: column;
+  }
 
   #pageInner2 div {
     display: flex;
