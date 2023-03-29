@@ -32,12 +32,12 @@
   --color-accent1: rgb(247, 134, 64);
   --color-accent2: #ca3338; */
 
-  /*   --color-primary1: #e7e7e7;
+  --color-primary1: #e7e7e7;
   --color-primary2: var(--color-primary1);
   --color-secondary2: #100f21;
   --color-secondary1: #203581;
-  --color-accent1: rgb(247, 134, 64);
-  --color-accent2: #ca3338; */
+  --color-accent1: #f78640;
+  --color-accent2: #ca3338;
 
   /*   --color-primary1: rgb(255, 255, 255);
   --color-primary2: rgb(185, 213, 216);
@@ -46,12 +46,12 @@
   --color-accent1: rgb(221, 159, 72);
   --color-accent2: rgb(233, 111, 63); */
 
-  --color-primary1: #fcffe7;
+  /*   --color-primary1: #fcffe7;
   --color-primary2: var(--color-primary1);
   --color-secondary1: #202020;
   --color-secondary2: var(--color-secondary1);
   --color-accent2: #ff7341;
-  --color-accent1: #dc5eea;
+  --color-accent1: #dc5eea; */
   /* Notice you can do this: --color-accent2: var(--color-accent1);*/
 }
 
