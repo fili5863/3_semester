@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="post">POST</button>
+
+    <template>
+      <article>
+        <h2>WINE NAME HERE</h2>
+        <button class="delete">DELETE</button>
+        <button class="update">UPDATE</button>
+      </article>
+    </template>
+    <main></main>
+    <script>
+      document.querySelector("#post").addEventListener("click", post);
+
+      const name = "Liebfraumilch";
+
+      function get() {
+        fetch("https://acvoueouddjxhosatjlf.supabase.co/rest/v1/wines?", {
+          method: "get",
+          headers: {
+            apikey:
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFjdm91ZW91ZGRqeGhvc2F0amxmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzMDksImV4cCI6MTk5NTQ5NTMwOX0.H6wADn1JBVS5WU5H6gxfApRh1tef78h4d8WzpYu1N4E",
+          },
+        })
+          .then(e => e.json())
+          .then(data => {
+            const t = document.querySelector("template").content;
+            document.querySelector("main").innerHTML = "";
+            data.forEach(wine => {
+              const copy = t.cloneNode(true);
+              copy.querySelector("h2").textContent = wine.name;
+              copy.querySelector("button.delete").addEventListener("click", () => {
+                deleteWine(wine.id);
+              });
+              copy.querySelector("button.update").addEventListener("click", () => {
+                patch(wine.id);
+              });
+              document.querySelector("main").appendChild(copy);
+            });
+          });
+      }
+      get();
+
+      function post() {
+        const newWine = {
+          name: name,
+          grapes: ["pinor lightblue"],
+          year: 1986,
+          type: "white",
+          origin: {
+            country: "Denmark",
+            region: "Nordsjælland",
+          },
+          isGood: false,
+        };
+
+        fetch("https://acvoueouddjxhosatjlf.supabase.co/rest/v1/wines?", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            Prefer: "return=representation",
+            apikey:
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFjdm91ZW91ZGRqeGhvc2F0amxmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzMDksImV4cCI6MTk5NTQ5NTMwOX0.H6wADn1JBVS5WU5H6gxfApRh1tef78h4d8WzpYu1N4E",
+          },
+          body: JSON.stringify(newWine),
+        })
+          .then(e => e.json())
+          .then(e => get());
+      }
+
+      function deleteWine(id) {
+        fetch("https://acvoueouddjxhosatjlf.supabase.co/rest/v1/wines?id=eq." + id, {
+          method: "delete",
+
+          headers: {
+            "Content-Type": "application/json",
+            Prefer: "return=representation",
+            apikey:
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFjdm91ZW91ZGRqeGhvc2F0amxmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzMDksImV4cCI6MTk5NTQ5NTMwOX0.H6wADn1JBVS5WU5H6gxfApRh1tef78h4d8WzpYu1N4E",
+          },
+        })
+          .then(e => e.json())
+          .then(e => get());
+      }
+
+      function patch(id) {
+        const updates = {
+          name: "Daddy's Wine",
+          isGood: true,
+        };
+
+        fetch("https://acvoueouddjxhosatjlf.supabase.co/rest/v1/wines?id=eq." + id, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Prefer: "return=representation",
+            apikey:
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFjdm91ZW91ZGRqeGhvc2F0amxmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzMDksImV4cCI6MTk5NTQ5NTMwOX0.H6wADn1JBVS5WU5H6gxfApRh1tef78h4d8WzpYu1N4E",
+          },
+          body: JSON.stringify(updates),
+        })
+          .then(e => e.json())
+          .then(e => get());
+      }
+    </script>
+  </body>
+</html>
