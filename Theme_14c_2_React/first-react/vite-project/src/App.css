@@ -1,0 +1,133 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  --primary-color: #002459;
+  --accent-color: #29abff;
+  --secondary-color: white;
+}
+
+body {
+  background-color: var(--primary-color);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 20px;
+}
+
+header a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+header h2 {
+  font-size: 2rem;
+  font-family: serif;
+  font-weight: 200;
+}
+
+header ul {
+  display: flex;
+  gap: 50px;
+  font-size: 1.1rem;
+  list-style: none;
+}
+
+header button {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+}
+
+.heroObj {
+  display: flex;
+  gap: 40px;
+}
+
+.heroText {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heroText h1 {
+  font-family: serif;
+  font-size: 5rem;
+  max-width: 15ch;
+  line-height: 5rem;
+  letter-spacing: 0.15rem;
+  font-weight: 200;
+  margin: 0;
+}
+
+.heroText h1 span {
+  color: var(--accent-color);
+}
+
+.heroText p {
+  font-size: 1.3rem;
+  font-weight: lighter;
+  max-width: 40ch;
+}
+
+.heroText button {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  width: 200px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.heroText button svg {
+  transform: translateY(15%);
+}
+
+.heroGraphics {
+  width: 800px;
+  height: 500px;
+  background-color: var(--secondary-color);
+}
+
+.bottomComponents {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottomComponents a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.services {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.container {
+  margin-block: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+article {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  border: dotted 5px red;
+  padding: 20px;
+  gap: 20px;
+  animation-name: wow;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes wow {
+  0% {
+    padding: 20px;
+  }
+
+  100% {
+    padding: 50px;
+    border-color: greenyellow;
+  }
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: blueviolet;
+}
+
+h1 {
+  color: coral;
+  animation-name: shake;
+  animation-duration: 200ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(20px);
+  }
+
+  25% {
+    transform: translate(-20px, -20px);
+  }
+
+  100% {
+    transform: translate(20px, 40px);
+  }
+}
+
+form {
+  display: grid;
+  width: 300px;
+  align-self: center;
+}
+
+#number {
+  grid-column: span 2;
+}
+
+#number input {
+  width: 100%;
+}
+
+#ex {
+  grid-row: 2;
+}
+#ex input {
+  width: 6ch;
+}
+
+#cvc {
+  grid-row: 2;
+}
+#cvc input {
+  width: 3ch;
+}

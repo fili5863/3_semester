@@ -1,28 +1,68 @@
-body {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+* {
+  font-family: sans-serif;
 }
 
-main {
-  grid-row: 1 / 3;
-  grid-column: 1 / 2;
+:root {
+  --x: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text font-size='90' y='1em'>❌</text></svg>")
+    right 3px top 50% / auto 80% no-repeat;
+  --v: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text font-size='90' y='1em'>✅</text></svg>")
+    right 3px top 50% / auto 80% no-repeat;
+  accent-color: rgb(102, 9, 51);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #732c2c;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #732c2c;
+}
+legend {
+  font-weight: bolder;
+}
+
+fieldset {
+  padding-inline: 0;
 }
 
 #wine_form {
-  grid-column: 2 / 3;
+  background-color: white;
+  padding: 20px;
+  width: 350px;
+}
+
+form {
+  display: grid;
+  gap: 1.5rem;
 }
 
 #post {
   width: 100px;
-  height: 50px;
-  grid-column: 2 / 3;
+  height: 30px;
 }
 
-input[type="number"]:valid {
-  background-color: palegreen;
+input {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-input[type="text"]:valid {
-  background-color: palegreen;
+input:invalid:not(:placeholder-shown, :focus) {
+  border-color: red;
+  background: var(--x);
+}
+
+input:valid {
+  border-color: green;
+  background: var(--v);
+}
+
+fieldset {
+  border-color: transparent;
+  background-color: white;
 }
