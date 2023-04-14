@@ -4,7 +4,6 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-
   --primary-color: #002459;
   --accent-color: #29abff;
   --secondary-color: white;
@@ -12,36 +11,37 @@
 
 body {
   background-color: var(--primary-color);
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
 }
 
-header {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-block: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-header a {
+nav a {
   color: var(--secondary-color);
   text-decoration: none;
 }
 
-header h2 {
+nav h2 {
   font-size: 2rem;
   font-family: serif;
   font-weight: 200;
 }
 
-header ul {
+nav ul {
   display: flex;
   gap: 50px;
   font-size: 1.1rem;
   list-style: none;
 }
 
-header button {
+nav button {
   background-color: var(--accent-color);
   border: none;
   border-radius: 25px;
@@ -51,6 +51,8 @@ header button {
 .heroObj {
   display: flex;
   gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .heroText {
@@ -100,23 +102,46 @@ header button {
 }
 
 .bottomComponents {
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
   margin-top: 100px;
   display: flex;
   justify-content: space-between;
 }
 
-.bottomComponents a {
+.bottomComponents li {
   text-decoration: none;
   color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.valueGrid {
+  margin-top: 100px;
+  background-color: white;
 }
 
 .services {
-  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  color: var(--primary-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.services h2 {
+  font-family: serif;
+  font-size: 4rem;
+  letter-spacing: 0.15rem;
+  font-weight: 200;
+  margin-top: 0;
 }
 
 .container {
-  margin-block: 100px;
   display: flex;
   justify-content: center;
   gap: 50px;
@@ -130,4 +155,5 @@ article {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: var(--primary-color);
 }
